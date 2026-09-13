@@ -12,7 +12,7 @@
 | `bench/` | 延迟基准（p50 / p95 / FPS） |
 | `docker/` | 可复现运行环境 |
 
-计划仓库：`https://github.com/gujingchao/vision-pipe`。
+仓库：https://github.com/gujingchao/vision-pipe
 
 ## Core install
 
@@ -45,6 +45,18 @@ uvicorn app.main:app --app-dir api --host 0.0.0.0 --port 8090
 - `GET /health`
 - `POST /infer` — multipart 图片 → JSON detections + timings
 - `WS /ws/stream` — 二进制或 base64 帧流；详见 [`api/README.md`](api/README.md)
+
+## Web（wayly）
+
+```bash
+# API 需已在 8090 运行
+cd web
+npm install
+npm run dev          # http://127.0.0.1:5173
+# npm run build && npm run preview
+```
+
+环境变量 `VITE_API_HTTP`（默认 `http://127.0.0.1:8090`）用于推导 `ws://…/ws/stream`。详见 [`web/README.md`](web/README.md)。
 
 ## CLI
 
@@ -90,7 +102,7 @@ pytest src/vision_pipe/tests api/tests -q
 cd cli && ruff check . && pytest
 ```
 
-CI：`.github/workflows/ci.yml`（lint + CLI 测试 + bench 冒烟）。
+CI：`.github/workflows/ci.yml`（cli + core-api + web）。
 
 ## License
 

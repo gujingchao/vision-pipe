@@ -1,0 +1,47 @@
+:root {
+  --bg: #07090f;
+  --panel: #0f1320;
+  --panel-2: #141a2a;
+  --border: #232a3d;
+  --text: #e8ecf4;
+  --muted: #8b95a8;
+  --accent: #22d3ee;
+  font-family: 'Segoe UI', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: radial-gradient(1200px 600px at 20% -10%, #12203a 0%, transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, #1a1030 0%, transparent 50%), var(--bg);
+}
+
+#app {
+  min-height: 100vh;
+}
+
+button,
+input {
+  outline: none;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #22d3ee66;
+  outline-offset: 1px;
+}
